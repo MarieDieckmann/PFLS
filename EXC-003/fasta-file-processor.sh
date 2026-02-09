@@ -6,7 +6,7 @@ then
 	awk '/>/ {if (seq) print seq; print; seq=""; next} {seq=seq $0} END {print seq}' $1 > fasta_one_line.fa
 	
 	#count the number of sequences
-	no_seq=$(grep '>' fasta_one_line.fa | wc -l)
+	no_seq=$(grep '>' fasta_one_line.fa | wc -l | awk '{print $1}')
 	
 	#get the total length of seq
 	total_length=$(grep -v '>' fasta_one_line.fa | awk '{totalseq=totalseq $0} END {print length(totalseq)}')
