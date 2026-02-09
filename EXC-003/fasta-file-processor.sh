@@ -1,4 +1,4 @@
-check_start_fasta=$(head $1 -n 1 | awk '{print(substr($1, 1, 1))}')
+check_start_fasta=$(head -n 1 $1 | awk '{print(substr($1, 1, 1))}')
 
 if [ -r "$1" ] && [ $check_start_fasta == '>' ]
 then
