@@ -1,3 +1,5 @@
+#!/bin/bash
+
 #make combined-data directory if not already exists and entering
 mkdir -p COMBINED-DATA
 cd RAW-DATA/
